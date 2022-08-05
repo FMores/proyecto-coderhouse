@@ -8,7 +8,7 @@ dotenv.config();
 export default {
 	/* SERVER AND DATABASE */
 	SERVER_MODE: process.env.SERVER_MODE || yargs.SERVER_MODE || 'Fork',
-	SERVER_PORT: process.env.SERVER_PORT || yargs.SERVER_PORT || 8080,
+	PORT: process.env.PORT || yargs.PORT || 8080,
 	MONGODB_MODE: process.env.MONGODB_MODE || yargs.MONGODB_MODE || 'local',
 	MONGO_LOCAL_URI: process.env.MONGO_LOCAL_URI || 'your_local_uri',
 	MONGO_ATLAS_URI: process.env.MONGO_ATLAS_URI || 'your_mongo_atlas_uri',

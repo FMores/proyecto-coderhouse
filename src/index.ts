@@ -21,8 +21,8 @@ if (cluster.isPrimary && config.SERVER_MODE === 'CLUSTER') {
 	});
 } else {
 	mongoConnection().then(() => {
-		httpServer.listen(config.SERVER_PORT, () => {
-			logger.info(`Server running on port => ${config.SERVER_PORT}`);
+		httpServer.listen(config.PORT, () => {
+			logger.info(`Server running on port => ${config.PORT}`);
 			ioService.init(httpServer);
 		});
 	});
