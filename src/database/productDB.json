@@ -1,0 +1,72 @@
+[
+	{
+		"_id": "PID-442dbc37-2df0-442c-904a-7360abc7cf53",
+		"code": "PC-1a020475-0a38-4e13-9a95-a6788f37bc2d",
+		"timestamp": "26-05-22 09:56:50 pm",
+		"name": "Papas fritas",
+		"description": "Papas fritas Lays 150gr",
+		"price": 34000000,
+		"stock": 3000000,
+		"thumbnail": "image-papas-lays"
+	},
+	{
+		"_id": "PID-6a79d7fa-5f35-4ab9-8f19-0587711d05e6",
+		"code": "PC-b9e66e43-8b26-482f-818a-3b7cafb6a2eb",
+		"timestamp": "26-05-22 09:56:51 pm",
+		"name": "Papas fritas",
+		"description": "Papas fritas Lays 150gr",
+		"price": 34000000,
+		"stock": 3000000,
+		"thumbnail": "image-papas-lays"
+	},
+	{
+		"_id": "PID-a04671c4-4bd8-4e3c-a366-7117a61c9121",
+		"code": "PC-1bbe6e35-7711-4f63-981e-d24698e1193f",
+		"timestamp": "26-05-22 09:56:52 pm",
+		"name": "Papas fritas",
+		"description": "Papas fritas Lays 150gr",
+		"price": 34000000,
+		"stock": 3000000,
+		"thumbnail": "image-papas-lays"
+	},
+	{
+		"_id": "PID-9ddcae6d-df28-41cf-93ad-cc6d7d305778",
+		"code": "PC-b2c4f2e6-1e13-443f-ba89-34318d7a52e9",
+		"timestamp": "26-05-22 09:56:52 pm",
+		"name": "Papas fritas",
+		"description": "Papas fritas Lays 150gr",
+		"price": 34000000,
+		"stock": 3000000,
+		"thumbnail": "image-papas-lays"
+	},
+	{
+		"_id": "PID-04a21e07-77d2-4522-96c9-e8b13e5da37a",
+		"code": "PC-1f6559ee-bc20-413f-83e0-6cd435baff79",
+		"timestamp": "26-05-22 09:56:52 pm",
+		"name": "Papas fritas",
+		"description": "Papas fritas Lays 150gr",
+		"price": 34000000,
+		"stock": 3000000,
+		"thumbnail": "image-papas-lays"
+	},
+	{
+		"_id": "PID-3029ba6c-d08f-4e28-b5f7-f79f2be64d0e",
+		"code": "PC-3b3c4e60-d2b1-4df9-b5d0-8d537472eafb",
+		"timestamp": "26-05-22 09:56:52 pm",
+		"name": "Papas fritas",
+		"description": "Papas fritas Lays 150gr",
+		"price": 34000000,
+		"stock": 3000000,
+		"thumbnail": "image-papas-lays"
+	},
+	{
+		"_id": "PID-006468d5-b81c-423c-9330-debd9a2060e9",
+		"code": "PC-30a19ba2-d592-43ad-b0e1-84580f02fe40",
+		"timestamp": "26-05-22 09:56:52 pm",
+		"name": "Papas fritas",
+		"description": "Papas fritas Lays 150gr",
+		"price": 34000000,
+		"stock": 3000000,
+		"thumbnail": "image-papas-lays"
+	}
+]

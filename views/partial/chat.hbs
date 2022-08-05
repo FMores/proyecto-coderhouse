@@ -1,0 +1,44 @@
+<br />
+<div class='container'>
+    <div class='row justify-content-center'>
+        <div class='col-md-10'>
+            <div class='chat-container'>
+                <h1>Centro de mensjes</h1>
+                <div>
+                    <form class='form-input'>
+                        <input class='input-email' id='email' type='text' placeholder='Ingrese su correo' required />
+                    </form>
+                    <form class='form-input'>
+                        <input class='input-email' id='name2' type='text' placeholder='Ingrese su nombre' required />
+                    </form>
+                    <form class='form-input'>
+                        <input class='input-email' id='surname' type='text' placeholder='Ingrese su apellido'
+                            required />
+                    </form>
+                    <form class='form-input'>
+                        <input class='input-email-number' id='age' type='number' placeholder='Ingrese su edad'
+                            required />
+                    </form>
+                    <form class='form-input'>
+                        <input class='input-email' id='alias' type='text' placeholder='Ingrese su alias' required />
+                    </form>
+                    <form class='form-input'>
+                        <select id='language' class='avatar-input'>
+                            <option value='/images/incognito.png' selected>Avatar</option>
+                            <option value='/images/man.png'>Man</option>
+                            <option value='/images/woman.png'>Woman</option>
+                        </select>
+                    </form>
+                </div>
+                <div class='text-area'>
+                    <div id='textarea' aria-readonly='true'></div>
+                </div>
+                <form class='form-input'>
+                    <input class='input-text' id='msg' type='text' placeholder='Ingrese algun comentario' />
+                    <button class='btn btn-primary btn-sm login-button' type='button'
+                        onclick='sendMessage()'>Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

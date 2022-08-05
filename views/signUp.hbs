@@ -1,0 +1,50 @@
+<div>{{uExist}}</div>
+<div id='id01' class='modal'>
+	<form id="target" class='modal-content animate' action='/api/auth/signup' enctype="multipart/form-data"
+		method='post'>
+		<div class='imgcontainer'>
+			<img src='/images/transgender.png' alt='Avatar' class='avatar' />
+		</div>
+		<div class='container'>
+
+			<label for='uname' class="labelSignup"><b>Full name</b></label>
+			<input type='text' class="inputSingup" placeholder='Enter Full Name' name='full_name' required />
+
+			<label for='uname' class="labelSignup"><b>Adress</b></label>
+			<input type='text' class="inputSingup" placeholder='Enter Adress' name='adress' required />
+
+			<label for='uname' class="labelSignup"><b>Age</b></label>
+			<input type='text' class="inputSingup" placeholder='Enter Age' name='age' required />
+
+			<div class="container-phone">
+				<form id="login">
+					<h7 class="p-phone"><b>Phone Number<b></h7>
+					<p>Enter number without 0 and 15</p>
+					<p>Argentina must have a "9" between the country code and the
+						area code.</p>
+					<p>Mexico must include a "1" after the "+52", even if they are from Nextel.</p>
+					<input id="phone" class="input-phone" type="tel" name="phone_number" />
+					<input type="button" class="input-phone" onclick="process(event)" class="btn" value="Verify" />
+				</form>
+				<div class="alert alert-info" style="display: none"></div>
+				<div class="alert alert-error" style="display: none; color:red"></div>
+			</div>
+
+			<label for='uname' class="labelFile"><b>Profile Picture</b></label>
+			<input type='file' class="inputFile" placeholder='Enter Profile Picture' name='profile_picture'
+				onclick="process()" required />
+
+			<label for='uname'><b>Email</b></label>
+			<input type='text' class="inputSingup" placeholder='Enter Username' name='email' required />
+
+			<label for='psw'><b>Password</b></label>
+			<input type='password' class="inputSingup" placeholder='Enter Password' name='password' required />
+
+			<button id="btn-submit" type='submit' disabled style="background-color:dimgrey">Sign up</button>
+			<div class='container' style='background-color:#f1f1f1'>
+				<span class='psw'>Are you registered? <a href='/api/auth/login'>Log In</a></span>
+			</div>
+		</div>
+
+	</form>
+</div>

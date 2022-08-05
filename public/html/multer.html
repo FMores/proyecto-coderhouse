@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- SINGLE FILE-->
+		<div>
+			<form action="/api/product/image/uploadsingle" enctype="multipart/form-data" method="post">
+				Select a image: <input type="file" class="singleFile" id="singleFile" name="singleFile" />
+				<input type="submit" class="submitSingle" value="Upload your file" />
+			</form>
+		</div>
+
+		<!-- MULTIPLE FILES-->
+		<div>
+			<form action="/api/product/image/uploadmultiple" enctype="multipart/form-data" method="post">
+				Select multiple images:
+				<input type="file" class="multipleFile" id="multipleFile" name="multipleFile" multiple />
+				<input type="submit" class="submitMultiple" value="Upload you files" />
+			</form>
+		</div>
+		<script>
+			// -------------- SINLGE FILE -------------------
+			let inputSingle = document.querySelector('.singleFile');
+			let submitSingle = document.querySelector('.submitSingle');
+
+			submitSingle.disabled = true; //setting button state to disabled
+
+			inputSingle.addEventListener('change', stateHandle);
+
+			function stateHandle() {
+				if (document.getElementById('singleFile').files.length === 1) {
+					submitSingle.disabled = false; //button remains disabled
+				} else {
+					submitSingle.disabled = true; //button is enabled
+				}
+			}
+		</script>
+		<script>
+			// -------------- MULTIPLE FILES ----------------
+			let inputMultiple = document.querySelector('.multipleFile');
+			let submitMultiple = document.querySelector('.submitMultiple');
+
+			submitMultiple.disabled = true; //setting button state to disabled
+
+			inputMultiple.addEventListener('change', stateHandle);
+
+			function stateHandle() {
+				if (document.getElementById('multipleFile').files.length > 3) {
+					alert('Solo puedes guardar 3 imagenes');
+				} else if (document.getElementById('multipleFile').files.length <= 3) {
+					submitMultiple.disabled = true; //button remains disabled
+				} else {
+					inputSubmit.disabled = false; //button is enabled
+				}
+			}
+		</script>
+	</body>
+</html>
