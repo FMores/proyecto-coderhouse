@@ -11,7 +11,7 @@ export const mongoConnection = async () => {
 			return;
 		} else {
 			await mongoose.connect(
-				`mongodb+srv://${cofig.MONGO_ATLAS_USER}:${cofig.MONGO_ATLAS_PWD}@cluster0.lbhel.mongodb.net/${config.MONGO_ATLAS_DBNAME}?retryWrites=true&w=majority`,
+				`mongodb+srv://${config.MONGO_ATLAS_USER}:${config.MONGO_ATLAS_PWD}@cluster0.lbhel.mongodb.net/${config.MONGO_ATLAS_DBNAME}?retryWrites=true&w=majority`,
 			);
 			logger.info('Successful connection to MongoDB Atlas');
 			return;
