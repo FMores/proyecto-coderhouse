@@ -6,6 +6,7 @@ export const mongoConnection = async () => {
 	try {
 		if (config.MONGODB_MODE === 'local') {
 			await mongoose.connect(config.MONGO_LOCAL_URI);
+
 			logger.info('Successful connection to local MongoDB');
 			return;
 		} else {
