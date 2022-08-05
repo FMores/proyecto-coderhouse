@@ -10,7 +10,9 @@ export const mongoConnection = async () => {
 			logger.info('Successful connection to local MongoDB');
 			return;
 		} else {
-			await mongoose.connect(config.MONGO_ATLAS_URI);
+			await mongoose.connect(
+				`mongodb+srv://${cofig.MONGO_ATLAS_USER}:${cofig.MONGO_ATLAS_PWD}@cluster0.lbhel.mongodb.net/${config.MONGO_ATLAS_DBNAME}?retryWrites=true&w=majority`,
+			);
 			logger.info('Successful connection to MongoDB Atlas');
 			return;
 		}
