@@ -15,12 +15,12 @@ export class CartFactoryDAO {
 				logger.info('Starting local file persistence for cart');
 				const fileLocation = path.resolve(__dirname, '../../DB/cartDB.json');
 				return new CartFileSystemDAO(fileLocation);
-			case PersistenceType.Mongo:
+			case PersistenceType.Mongo_Local:
 				logger.info('Starting Mongo_Local_DB for cart');
-				return new CartMongoDAO();
+				return new CartMongoDAO(PersistenceType.Mongo_Local);
 			case PersistenceType.Mongo_Atlas:
 				logger.info('Starting Mongo_Atlas_DB for cart');
-				return new CartMongoDAO();
+				return new CartMongoDAO(PersistenceType.Mongo_Atlas);
 			case PersistenceType.MySQL:
 				logger.info('Starting MySQL_DB for cart');
 				return new MysqlCartDAO(PersistenceType.MySQL);

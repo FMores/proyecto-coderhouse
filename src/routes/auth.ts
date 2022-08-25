@@ -7,12 +7,12 @@ import { EmailService } from '../services/email';
 import { login } from '../models/joi.schemas';
 import passport from 'passport';
 
-declare module 'express-session' {
-	export interface SessionData {
-		auth: boolean;
-		uname: string;
-	}
-}
+// declare module 'express-session' {
+// 	export interface SessionData {
+// 		auth: boolean;
+// 		uname: string;
+// 	}
+// }
 
 const router = Router();
 
@@ -44,25 +44,30 @@ router.get('/signup', (req: Request, res: Response) => {
 	res.render('signup');
 });
 
-router.post('/signup', upload_single_img, multer_check_img, (req: Request, res: Response, next: NextFunction) => {
-	passport.authenticate('signup', async function (err, user, info) {
-		if (err) {
-			logger.error(`Signup error: ${err}`);
-			return next(err);
-		}
+router.post(
+	'/signup',
+	upload_single_img,
+	multer_check_img,
+	(req: Request, res: Response, next: NextFunction) => {
+		passport.authenticate('signup', async function (err, user, info) {
+			if (err) {
+				logger.error(`Signup error: ${err}`);
+				return next(err);
+			}
 
-		if (!user) {
-			logger.error(`Signup invalid user: ${info}`);
-			return res.render('userExist');
-		}
+			if (!user) {
+				logger.error(`Signup invalid user: ${info}`);
+				return res.render('userExist');
+			}
 
-		const mail = await mail_creator(req.body);
+			const mail = await mail_creator(req.body);
 
-		await EmailService.sendEmail(mail.destination, mail.subject, mail.content);
+			await EmailService.sendEmail(mail.destination, mail.subject, mail.content);
 
-		res.redirect('/api/home');
-	})(req, res, next);
-});
+			res.redirect('/api/home');
+		})(req, res, next);
+	},
+);
 
 /*------------------------------------------------ */
 /*-------------------- LOGOUT -------------------- */

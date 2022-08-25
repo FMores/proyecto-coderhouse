@@ -8,9 +8,9 @@ import { PersistenceType } from '../../config/interfaces';
 export class MsgFactory {
 	static get(type?: PersistenceType) {
 		switch (type) {
-			case PersistenceType.Mongo:
+			case PersistenceType.Mongo_Local:
 				logger.info('Starting Mongo_Local_DB for messages');
-				return new MsgMongoDAO(PersistenceType.Mongo);
+				return new MsgMongoDAO(PersistenceType.Mongo_Local);
 			case PersistenceType.Mongo_Atlas:
 				logger.info('Starting Mongo_Atlas_DB for messages');
 				return new MsgMongoDAO(PersistenceType.Mongo_Atlas);

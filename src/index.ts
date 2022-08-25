@@ -1,4 +1,3 @@
-import { mongoConnection } from './services/MongoDB';
 import { logger } from './utils/winston.logger';
 import { httpServer } from './services/server';
 import { ioService } from './services/socket';
@@ -20,10 +19,8 @@ if (cluster.isPrimary && config.SERVER_MODE === 'CLUSTER') {
 		cluster.fork();
 	});
 } else {
-	mongoConnection().then(() => {
-		httpServer.listen(config.PORT, () => {
-			logger.info(`Server running on port => ${config.PORT}`);
-			ioService.init(httpServer);
-		});
+	httpServer.listen(config.PORT, () => {
+		logger.info(`Server running on port => ${config.PORT}`);
+		ioService.init(httpServer);
 	});
 }

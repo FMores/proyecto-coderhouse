@@ -1,13 +1,19 @@
 import { CommonMethodsDAO, NewProductI, PersistenceType, ProductI } from '../../config/interfaces';
-import { mongoConnection } from '../../services/MongoDB';
-import mongoose from 'mongoose';
 import mongodbProductModel from '../../models/mongo.prod.model';
+import { mongoConnection } from '../../services/MongoDB';
+import { date_creator } from '../../utils/date';
+import mongoose from 'mongoose';
 
 export class MongoDAO implements CommonMethodsDAO {
 	private product: any;
 
-	constructor() {
+	constructor(public persistence: PersistenceType) {
 		this.product = mongodbProductModel;
+		this.initMongo();
+	}
+
+	private async initMongo() {
+		await mongoConnection(this.persistence);
 	}
 
 	private async checkId(id: string): Promise<null | undefined> {
@@ -30,7 +36,9 @@ export class MongoDAO implements CommonMethodsDAO {
 	}
 
 	public async add(newProductData: NewProductI): Promise<ProductI> {
-		const newProduct = new this.product(newProductData);
+		const timestamp = await date_creator();
+
+		const newProduct = new this.product({ ...newProductData, timestamp });
 		const savedProduct = await newProduct.save();
 		return savedProduct;
 	}

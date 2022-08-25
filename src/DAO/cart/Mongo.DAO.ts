@@ -3,15 +3,18 @@ import { mongoConnection } from '../../services/MongoDB';
 import mongodbCartModel from '../../models/mongo.cart.model';
 import mongodbProductModel from '../../models/mongo.prod.model';
 
-// Harcoded userId = '628c290ebeed9a7b4df6b722';
-
 export class CartMongoDAO implements CartMethodsDAO<any> {
 	private cart: any;
 	private product: any;
 
-	constructor() {
+	constructor(public persistence: PersistenceType) {
 		this.cart = mongodbCartModel;
 		this.product = mongodbProductModel;
+		this.initMongo();
+	}
+
+	private async initMongo() {
+		await mongoConnection(this.persistence);
 	}
 
 	private async checkId(id: string): Promise<any> {
@@ -128,14 +131,18 @@ export class CartMongoDAO implements CartMethodsDAO<any> {
 
 		//Si existe el carrito, busco si ya cuenta con el producto.
 		if (currentCart.length > 0) {
-			searchedProduct = currentCart[0].items.filter((el: any) => el.productId.toString() === id_prod);
+			searchedProduct = currentCart[0].items.filter(
+				(el: any) => el.productId.toString() === id_prod,
+			);
 		}
 
 		//Si el carrito tiene el producto, actualizo eliminando uno. Si no existe, termino la funcion.
 		if (searchedProduct.length > 0) {
 			const productData = await this.cart.findOne({}, { userId: id }).populate('items.productId');
 
-			const product = productData.items.filter((el: any) => el.productId._id.toString() === id_prod);
+			const product = productData.items.filter(
+				(el: any) => el.productId._id.toString() === id_prod,
+			);
 
 			const cartUpdated = await this.cart.findOneAndUpdate(
 				{ userId: id, 'items.productId': id_prod },

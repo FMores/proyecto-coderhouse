@@ -1,5 +1,4 @@
 const socket = io.connect();
-
 //*------ PARA MANEJO DE CHAT ------*//
 
 const renderMsg = (currentMsg) => {
@@ -15,7 +14,8 @@ const renderMsg = (currentMsg) => {
 
 	if (document.getElementById('textarea')) {
 		document.getElementById('textarea').innerHTML = newTextArea;
-		document.getElementById('textarea').scrollTop = document.getElementById('textarea').scrollHeight;
+		document.getElementById('textarea').scrollTop =
+			document.getElementById('textarea').scrollHeight;
 	}
 	return;
 };

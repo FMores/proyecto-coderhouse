@@ -1,6 +1,5 @@
 import { CartMethodsDAO, PersistenceType } from '../../config/interfaces';
 import mongodbProductModel from '../../models/mongo.prod.model';
-import { mongoConnection } from '../../services/MongoDB';
 import mongodbCartModel from '../../models/mongo.cart.model';
 import mongoose from 'mongoose';
 

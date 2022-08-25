@@ -10,6 +10,7 @@ export interface ProductI {
 	_id: string;
 	name: string;
 	price: number;
+	title?: string;
 	thumbnail: string;
 	timestamp?: string;
 }
@@ -32,7 +33,7 @@ export enum PersistenceType {
 	FileSystem = 'FSystem',
 	MySQL = 'MySQL',
 	SQLite3 = 'SQLite3',
-	Mongo = 'Mongo',
+	Mongo_Local = 'Mongo_Local',
 	Mongo_Atlas = 'Mongo_Atlas',
 	FireBase = 'FireBase',
 }

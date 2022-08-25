@@ -15,12 +15,12 @@ export class ProductFactoryDAO {
 				logger.info('Starting local file persistence for products');
 				const fileLocation = path.resolve(__dirname, '../../DB/productDB.json');
 				return new FileSystemDAO(fileLocation);
-			case PersistenceType.Mongo:
+			case PersistenceType.Mongo_Local:
 				logger.info('Starting Mongo_Local_DB for products');
-				return new MongoDAO();
+				return new MongoDAO(PersistenceType.Mongo_Local);
 			case PersistenceType.Mongo_Atlas:
 				logger.info('Starting Mongo_Atlas_DB for products');
-				return new MongoDAO();
+				return new MongoDAO(PersistenceType.Mongo_Atlas);
 			case PersistenceType.MySQL:
 				logger.info('Starting MySQL_DB for products');
 				return new MysqlDAO(PersistenceType.MySQL);

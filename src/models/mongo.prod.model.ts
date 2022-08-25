@@ -16,9 +16,13 @@ export const ProductModel = new Schema<ProductI>(
 			type: String,
 			required: [true, 'Is required'],
 		},
+		timestamp: {
+			type: String,
+			required: [true, 'Is required'],
+		},
 	},
 	{
-		timestamps: true,
+		timestamps: false,
 		versionKey: false,
 	},
 );
