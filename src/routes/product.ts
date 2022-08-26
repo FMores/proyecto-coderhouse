@@ -14,7 +14,12 @@ router.get('/:id?', expressAsyncHandler(product_controller.get));
 router.post('/', isLoggedIn, validator(new_product), expressAsyncHandler(product_controller.add));
 
 // PUT: '/:id' - Actualiza un producto por su id (disponible para administradores)
-router.put('/:id', isLoggedIn, validator(update_product)), expressAsyncHandler(product_controller.update);
+router.put(
+	'/:id',
+	isLoggedIn,
+	validator(update_product),
+	expressAsyncHandler(product_controller.update),
+);
 
 // DELETE: '/:id' - Borra un producto por su id (disponible para administradores)
 router.delete('/:id', isLoggedIn, expressAsyncHandler(product_controller.delete));
