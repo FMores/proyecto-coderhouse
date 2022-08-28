@@ -10,7 +10,7 @@ class ProductController {
 		const dataReceived = await product_API.get(id);
 
 		if (dataReceived.length === 0) {
-			res.status(404).send({ status: 'Not Found' });
+			res.status(200).send({ status: 'Not Found' });
 			return;
 		}
 
@@ -34,7 +34,7 @@ class ProductController {
 			res.status(200).send({ status: 'Product updated successfully', product: updatedResult });
 			return;
 		}
-		res.status(404).send({ status: 'Not Found' });
+		res.status(200).send({ status: 'Not Found' });
 	}
 
 	public async delete(req: Request, res: Response): Promise<void> {
@@ -43,7 +43,7 @@ class ProductController {
 		const daleteResult = await product_API.delete(id);
 
 		if (daleteResult === null) {
-			res.status(404).send({ status: 'Not Found' });
+			res.status(200).send({ status: 'Not Found' });
 			return;
 		}
 		res.status(200).send({ status: 'Product delete successfully' });

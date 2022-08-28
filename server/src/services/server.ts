@@ -9,6 +9,7 @@ import config from '../config';
 import { Server } from 'http';
 import express from 'express';
 import path from 'path';
+import cors from 'cors';
 
 export const app = express();
 
@@ -29,6 +30,7 @@ app.use(express.static(path.resolve(__dirname, '../../public')));
 //Middlewares basicos necesarios.
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+//app.use(cors());
 app.use(compression());
 app.use(cookieParser(config.COOKIE_PARSER_SECRET));
 app.use(session_config);

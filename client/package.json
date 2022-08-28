@@ -16,6 +16,7 @@
 		"log-symbols": "^5.1.0"
 	},
 	"devDependencies": {
+		"@faker-js/faker": "^7.4.0",
 		"nodemon": "^2.0.19",
 		"winston": "^3.8.1"
 	}
